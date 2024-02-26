@@ -10,12 +10,12 @@ function addTask() {
 }
 
 function deleteTask() {
-  const check = document.querySelector(".tasks ul li .checkInput");
-  const element = check.parentNode;
-  const name = element.querySelector("span");
-  if (check.checked == true) {
-    name.classList.add("remove");
-  } else {
-    name.classList.remove("remove");
+  const check = document.querySelectorAll(".tasks ul li .checkInput");
+  for(var i=0;i<check.length;i++){
+    if (check[i].checked == true) {
+      const element = check[i].parentNode;
+      const name = element.querySelector("span");
+      name.classList.add("remove");
+    }
   }
 }
